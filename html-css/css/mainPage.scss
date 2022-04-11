@@ -548,6 +548,8 @@ $nb-slides: 6;
       }
       @include desktop{
         width: 70%;
+        -ms-grid-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       }
       &__item {
         display: flex;
@@ -864,7 +866,6 @@ $nb-slides: 6;
     }
   }
   
-  // goes from 1 to nb-slides.
   @for $n from 1 through $nb-slides {
     // arranges the navigation dots horizontally
     .nav-dot[for=slide#{$n}] {
@@ -894,7 +895,7 @@ $nb-slides: 6;
     font-weight: bolder;
     text-shadow: 0 0 7.5px rgba($color: black, $alpha: .7);
   
-    top: 50%;
+    top: 55%;
     z-index: 1;
     opacity: .7;
     margin-top: -$arrow-size / 2;
@@ -922,10 +923,8 @@ $nb-slides: 6;
     }
   }
   
-  @function custom-modulo($n) {
-    // this function returns '$n % $nb-slides', except that if the result is 0,
-    // '$nb-slides' is returned.
-    // for exemple, for $nb-slides = 4, possible values are {1, 2, 3, 4}
+  @function slide-real-number($n) {
+    // for $nb-slides = 4, possible values are {1, 2, 3, 4}
     // (and not {0, 1, 2, 3}).
     @return 1 + ($nb-slides + (($n - 1) % $nb-slides)) % $nb-slides;
   }
@@ -934,11 +933,10 @@ $nb-slides: 6;
     // when the nth slide is selected,
     // displays the left-arrow that goes to the (n-1)th slide
     // and the right arrow that goes to the (n+1)th slide.
-    // don't worry, it loops thanks to the 'custom-modulo' function !
   
     #slide#{$n}:checked {
-      & ~ .arrow--left[for=slide#{custom-modulo($n - 1)}],
-      & ~ .arrow--right[for=slide#{custom-modulo($n + 1)}] {
+      & ~ .arrow--left[for=slide#{slide-real-number($n - 1)}],
+      & ~ .arrow--right[for=slide#{slide-real-number($n + 1)}] {
         display: block;
       }
     }

@@ -673,6 +673,8 @@ body {
 @media only screen and (min-width: 1280px) {
   .item-showcase__item-container {
     width: 70%;
+    -ms-grid-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 }
 
@@ -1192,7 +1194,7 @@ body {
   cursor: pointer;
   font-weight: bolder;
   text-shadow: 0 0 7.5px rgba(0, 0, 0, 0.7);
-  top: 50%;
+  top: 55%;
   z-index: 1;
   opacity: .7;
   margin-top: -25px;
