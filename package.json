@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "animate.css": "^4.1.1"
-  }
+  },
+  "type": "module",
+  "name": "practicasfront",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjcutino/PracticasFront.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjcutino/PracticasFront/issues"
+  },
+  "homepage": "https://github.com/pjcutino/PracticasFront#readme",
+  "description": ""
 }

@@ -1,29 +1,34 @@
+export * from "./details.js";
+import { loadDisplay } from "./details.js";
+export * from "./info.js";
+import { gameList } from "./info.js";
+
 // Swap content to details
-displayDetails = (game) => {
+export const displayDetails = (game) => {
     const bod = document.querySelector('#content-section');
     bod.innerHTML = '<h2 class="details-title">' + game.getName +'<h2>';
     loadDisplay(game);
 }
 
-loadList = () => {
+export const loadList = () => {
     const bod = document.querySelector('#content-section');
     const listContainer = document.createElement("div");
     bod.appendChild(listContainer);
     // Each game displayed as: [Img Name] --- [Details-Button]
-    for (i = 0; i < gameList.length; i++){
+    for (let i = 0; i < gameList.length; i++){
         
-        listItem = document.createElement("div");
+        let listItem = document.createElement("div");
         bod.appendChild(listItem);
 
-        listItemLeft = document.createElement("div");
-        listItemName = document.createElement("p");
-        listItemImg = document.createElement("img");
-        listItemButton = document.createElement("a");
+        let listItemLeft = document.createElement("div");
+        let listItemName = document.createElement("p");
+        let listItemImg = document.createElement("img");
+        let listItemButton = document.createElement("a");
 
         // assign all game attributes and link to details
         listItemName.textContent = gameList[i].getName;
         listItemImg.src = gameList[i].getImage;
-        listItemButton.addEventListener("click", displayDetails.bind(this,gameList[i]));
+        listItemButton.addEventListener("click", displayDetails.bind(this,gameList[i])); // () => func(game[i]) falla
         
         listItemLeft.appendChild(listItemImg);
         listItemLeft.appendChild(listItemName);
@@ -32,6 +37,10 @@ loadList = () => {
         listItem.appendChild(listItemButton);
 
         listItem.classList.add('list-container__list-item');
+        listItemName.classList.add('list-container__name');
+        listItemImg.classList.add('list-container__image');
+        listItemButton.classList.add('list-container__button');
+        listItemLeft.classList.add('list-container__left');
         listContainer.appendChild(listItem);
         listContainer.classList.add('list-container');
     }

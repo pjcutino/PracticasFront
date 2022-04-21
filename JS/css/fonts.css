@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../assets/fonts/icomoon/fonts/icomoon.eot");
+  src: url("../assets/fonts/icomoon/fonts/icomoon.eot") format("embedded-opentype"), url("../assets/fonts/icomoon/fonts/icomoon.ttf") format("truetype"), url("../assets/fonts/icomoon/fonts/icomoon.woff") format("woff"), url("../assets/fonts/icomoon/fonts/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-valve:before {
+  content: "\e904";
+  color: #f74843;
+}
+
+.icon-steam:before {
+  content: "\e902";
+}
+
+.icon-cheveron-right:before {
+  content: "\e901";
+}
+
+.icon-twitter1:before {
+  content: "\e903";
+}
+
+.icon-shopping-bag:before {
+  content: "\e900";
+}
+
+.icon-account_circle:before {
+  content: "\e920";
+}
+
+.icon-cart:before {
+  content: "\e93a";
+}
+
+.icon-search:before {
+  content: "\e986";
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+
+.icon-facebook2:before {
+  content: "\ea91";
+}
+
+.icon-twitter:before {
+  content: "\ea96";
+}
+/*# sourceMappingURL=fonts.css.map */

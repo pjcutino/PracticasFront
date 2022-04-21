@@ -1,0 +1,15 @@
+<div *ngIf="pokemons">
+  <h3>Pokemon List!</h3>
+  <div class="pokemon-grid">
+    <div class="pokemon-grid__box" *ngFor="let pokemon of pokemons">
+      <h4>{{ pokemon.id }} - {{ pokemon.name }} </h4>
+      <img [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+      <p *ngIf="pokemon.types[1]">
+          Type: {{ pokemon.types[0].type.name }} / {{ pokemon.types[1]?.type.name }}
+      </p>
+      <p *ngIf="!pokemon.types[1]">
+        Type: {{ pokemon.types[0].type.name }}
+      </p>
+    </div>      
+  </div>
+</div>

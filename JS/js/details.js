@@ -1,4 +1,4 @@
-loadDisplay = (game) => {
+export const loadDisplay = (game) => {
     const bod = document.querySelector('#content-section');
     
     const detailsDisplayContainer = document.createElement("div");
@@ -10,8 +10,11 @@ loadDisplay = (game) => {
     detailsDisplayContainer.appendChild(detailsDisplay);
     bod.appendChild(detailsDisplayContainer);
 
-    detailsDisplayImg = document.createElement("img");
-    detailsDisplayDescription = document.createElement("p");
+    let detailsDisplayImg = document.createElement("img");
+    let detailsDisplayDescription = document.createElement("p");
+
+    detailsDisplayImg.classList.add('details-content__image');
+    detailsDisplayDescription.classList.add('details-content__description');
 
     // assign game attributes
     detailsDisplayImg.src = game.getImage;

@@ -1,5 +1,10 @@
+export * from "./list.js";
+import { loadList } from "./list.js";
+export * from "./info.js";
+import { renderUsers } from "./info.js";
+
 // Swap content to list
-displayList = () => {
+const displayList = () => {
   const bod = document.querySelector('#content-section');
   if(document.querySelector(".list-container")){
     window.alert("Already here!");
@@ -17,7 +22,7 @@ displayList = () => {
     const menu = document.getElementById("menu");
     const nodes = menu.getElementsByTagName("a");
 
-    addListeners = () => {
+    const addListeners = () => {
       // Nav color
       navbarSection.addEventListener("mouseover", mouseoverNav);
       navbarSection.addEventListener("mouseout", mouseoutNav);
@@ -34,10 +39,10 @@ displayList = () => {
     let open = false;
     menu.style.maxHeight = 0;
 
-    dropLinks = () => {
+    const dropLinks = () => {
       if (open) {
         menu.style.maxHeight = 0;
-        setTimeout(function(){
+        setTimeout(() =>{
           menu.style.transform = `translateY(${-300}px)`;
         }, 300);
         menu.classList.toggle("active");
@@ -54,7 +59,7 @@ displayList = () => {
     // Pop-up 
     var popup = null;
 
-    createPopup = () => {
+    const createPopup = () => {
       popup = document.createElement("div");
       popup.classList.add('popup--fadeIn');
       var newParag = document.createElement("p");
@@ -63,20 +68,20 @@ displayList = () => {
       var currentDiv = document.querySelector("#content-section");
       document.body.insertBefore(popup, currentDiv);
     }
-    fadeOutPopup = () => {
+    const fadeOutPopup = () => {
       popup.classList.remove('popup--fadeIn');
       popup.classList.add('popup--fadeOut');
     }
-    removePopup = () => {
+    const removePopup = () => {
       popup.remove();
     }
 
     // Popup fade in + fade out
-    setTimeout(function(){
+    setTimeout(() =>{
       createPopup();
-      setTimeout(function(){
+      setTimeout(() =>{
         fadeOutPopup();
-        setTimeout(function(){
+        setTimeout(() =>{
           removePopup();
         }, 3000);
       }, 4000);
@@ -85,7 +90,7 @@ displayList = () => {
 
     // Mouse-over color
     var navColor = navbarSection.style.backgroundColor;
-    mouseoverNav = (event) => {
+    const mouseoverNav = (event) => {
       if (event.target.className == "navbar"){
         event.target.style.backgroundColor = "#450b23";
       }
@@ -93,7 +98,7 @@ displayList = () => {
         navbarSection.style.backgroundColor = "#450b23";
       }
     }
-    mouseoutNav = (event) => {
+    const mouseoutNav = (event) => {
       if (event.target.className == "navbar"){
         event.target.style.backgroundColor = navColor;
       }
