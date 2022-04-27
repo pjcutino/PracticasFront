@@ -1,0 +1,5 @@
+<h1>Abilities</h1>
+<ul class="pokemon__abilities">
+    <li *ngFor="let ability of pokemon.abilities" [class]="'pokemon__type font-size-1 palette--' + type"
+      ><strong>{{ ability }}</strong></li>
+</ul>

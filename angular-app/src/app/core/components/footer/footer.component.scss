@@ -1,0 +1,11 @@
+@import '../../../variables';
+
+.footer-container{
+    background-color: $primary-color;
+    color: white;
+    padding: 20px;
+
+    p{
+        font-size: 14px;
+    }
+}

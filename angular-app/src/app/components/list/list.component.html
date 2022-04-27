@@ -1,4 +1,15 @@
-<div>
-<p>hola</p>
+
+<div class="list-pipes">
+  <input type="text" class="list-pipes__search" [(ngModel)] = "searchText" placeholder="Search Pokemon" />
+  <app-toggle-paginator [page]="0" #paginator></app-toggle-paginator>
 </div>
-<!--<app-navbar></app-navbar>-->
+<ul class="pokemon-list" *ngIf="pokemons">
+<!-- en modo movil funciona -->
+  <li *ngFor="let pokemon of pokemons | orderById | listPagination : paginator.currentPage : 25 | nameFilter : searchText ">
+    <app-card-list [pokemon]="pokemon" [megas]="megas">/>
+  />
+/>
+
+
+
+

@@ -1,0 +1,25 @@
+
+  @import url('../../_palletes.scss');
+  
+  :host {
+    display: inline-block;
+    width: 22rem;
+    margin-bottom: 3rem;
+  }
+
+  .pokemon{
+    position: relative;
+  }
+
+  .poke-button{
+    position: absolute;
+    top: 325px;
+    left: 18px;
+    width: 180px;
+    display: inline-flex;
+    align-items: center; 
+    justify-content: center;
+
+  }
+  
+  

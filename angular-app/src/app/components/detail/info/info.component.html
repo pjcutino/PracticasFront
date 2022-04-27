@@ -1,0 +1,19 @@
+  <strong class="font-size-2">No. {{ pokemon.id }} - {{ pokemon.name }}</strong>
+
+  <figure [class]="'pokemon__figure palette--' + pokemon.types[0]">
+    <img *ngIf="pokemon.spriteUrl" class="pokemon__image" [src]="pokemon.spriteUrl" [alt]="pokemon.name + 'image'">     
+  </figure>
+
+  <ul class="pokemon__types">
+    <li 
+    *ngFor="let type of pokemon.types"
+      [class]="'pokemon__type font-size-1 palette--' + type"
+      ><strong>{{ type }}</strong></li>
+  </ul>
+
+  <div *ngIf="mega">
+    <strong class="font-size-3 pokemon__name">Mega</strong>
+    <figure [class]="'pokemon__figure palette--' + pokemon.types[0]">
+      <img *ngIf="mega.imageUrl" class="pokemon__image" [src]="mega.imageUrl" [alt]="mega.name + 'image'">     
+    </figure>
+  </div>

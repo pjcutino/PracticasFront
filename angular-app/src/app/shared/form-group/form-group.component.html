@@ -1,0 +1,22 @@
+<div class="mega-form">
+  <form class="mega-form__form" novalidate (ngSubmit)="onSubmit()" [formGroup]="megaForm">
+    <fieldset class="mega-form__fieldset">
+      <label class="mega-form__label" for="name">Name:</label>
+      <input class="mega-form__input" type="text" id="name" formControlName="name" placeholder="Mega Pikachu" />
+      
+    </fieldset>
+    
+    <fieldset class="mega-form__fieldset">
+      <label class="mega-form__label" for="imageUrl">Image:</label>
+      <input class="mega-form__input" type="imageUrl" id="imageUrl" formControlName="imageUrl" placeholder="https://example.png" />
+    
+    </fieldset>
+
+    <fieldset class="mega-form__fieldset">
+      <label class="mega-form__label" for="basePokemon">Base Pokemon:</label>
+      <input class="mega-form__input" type="basePokemon" id="basePokemon" formControlName="basePokemon" placeholder="pikachu" />
+    </fieldset>
+
+    <button class="poke-button" type="submit" [disabled]="!megaForm.valid">Submit</button>
+  </form>
+</div>

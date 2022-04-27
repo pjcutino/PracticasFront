@@ -1,0 +1,20 @@
+
+<h1 class="title">Mega Evolutions</h1>
+<ul class="pokemon-list" *ngIf="megas">
+    <li *ngFor="let mega of megas">
+      <div class="pokemon" *ngIf="mega">
+        <strong class="font-size-3 pokemon__name">{{ mega.name }}</strong>
+    
+        <figure [class]="pokemon__figure">
+          <figcaption class="font-size-2">{{ mega.basePokemon }}</figcaption>
+          <img *ngIf="mega.imageUrl" class="pokemon__image" [src]="mega.imageUrl" >     
+        </figure>
+      
+        <div class="button-container">
+          <a class="poke-button poke-button--left" [routerLink]="['/my-creates',mega.id]">Modify</a>
+          <a class="poke-button poke-button--right" href="/my-creates" (click)="removeMega(mega.id)">Delete</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  

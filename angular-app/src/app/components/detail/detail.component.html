@@ -1,1 +1,15 @@
-<p>detail works!</p>
+<div class="details-container" *ngIf="pokemon">
+    
+    <div class="pokemon">
+        <app-info [pokemon] = "pokemon" [mega] = "mega"></app-info>
+    </div>
+
+    <div class="pokemon">
+        <app-abilities [pokemon] = "pokemon"></app-abilities>
+    </div>
+  
+    <div class="pokemon">
+        <app-moves [pokemon] = "pokemon"></app-moves>
+    </div>
+
+</div>

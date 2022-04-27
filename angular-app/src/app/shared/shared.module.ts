@@ -1,31 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { RequestAPIComponent } from './request-api/request-api.component';
-import { RequestAPIService } from './request-api/services/request-api.service';
+import { CardListComponent } from './card-list/card-list.component';
+import { RouterModule } from '@angular/router';
+import { FormGroupComponent } from './form-group/form-group.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MegasApiService } from '../core/services/megas-api/megas-api.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    NavbarComponent,
-    RequestAPIComponent
-  ],
+  declarations: [CardListComponent, FormGroupComponent],
   imports: [
     CommonModule,
-    NavbarComponent,
-    RequestAPIComponent,
+    RouterModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
-  exports: [
-    NavbarComponent,
-    RequestAPIComponent
-  ]
+  exports: [CardListComponent, FormGroupComponent]
 })
 export class SharedModule {
   static forRoot(){
     return{
       ngModule: SharedModule,
-      providers:[RequestAPIService]
+      providers:[MegasApiService]
     }
   }
  }

@@ -1,0 +1,64 @@
+
+img{
+  background-color: black;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.pokemon{
+  margin-top: 20px;
+  position: relative;
+  background-color: white;
+}
+
+.poke-button{
+  position: absolute;
+  top: 255px;
+  left: 18px;
+  width: 80px;
+  display: inline-flex;
+  align-items: center; 
+  justify-content: center;
+  &--left{
+    left: 15px;
+  }
+  &--right{
+    left: 110px;
+    background-color: #d17575;
+    &:hover{
+        background-color: #702222;
+    
+        -webkit-animation:btn_delete_hover 0.5s;
+        -moz-animation:btn_delete_hover 0.5s;
+        animation:btn_delete_hover 0.5s;
+    
+        @keyframes btn_delete_hover {
+          0% {background-color: #ba4444;}
+          100% {background-color:#702222;}
+        }
+    
+        transition: transform 125ms;
+        transform: scale(1.1);
+      }
+      &:active{
+        transform: translateY(10px);
+        background-color: #a53594;
+        -webkit-animation:btn_delete_active 0.5s;
+        -moz-animation:btn_delete_active 0.5s;
+        animation:btn_delete_active 0.5s;
+    
+        @keyframes btn_delete_active {
+          0% {background-color: #702222;}
+          100% {background-color:#a53594;}
+        }
+        transition: transform 125ms;
+        transform: scale(1);
+      }
+  }
+}
+
+.button-container{
+
+}

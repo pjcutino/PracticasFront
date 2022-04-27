@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RequestAPIComponent } from 'src/app/shared/request-api/request-api.component';
 
 import { ListComponent } from './list.component';
 
